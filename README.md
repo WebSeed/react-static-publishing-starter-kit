@@ -1,2 +1,3 @@
-# react-static-publishing-starter-kit
+# React Static Starter
+
 React static publishing starter kit
