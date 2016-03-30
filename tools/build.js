@@ -1,20 +1,12 @@
-import webpack from 'webpack';
-import clientConfig from './webpack/config.client';
-import serverConfig from './webpack/config.server';
-
-function extractStats(config, stats) {
-  return stats.toString(config.stats);
-}
+import clean from './clean';
+import copy from './copy';
+import bundle from './bundle';
 
 function build() {
-  return new Promise((resolve, reject) => {
-    webpack([clientConfig, serverConfig]).run((err, stats) => {
-      if (err) {
-        return reject(err);
-      }
-      return resolve(extractStats(clientConfig, stats));
-    });
-  });
+
+  return clean()
+    .then(copy)
+    .then(bundle);
 }
 
 export default build;

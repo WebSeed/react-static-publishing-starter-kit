@@ -4,6 +4,7 @@
   "description": "React Static Publishing Starter Kit",
   "main": "index.js",
   "scripts": {
+    "clean": "babel-node tools/cli clean",
     "build": "babel-node tools/cli build"
   },
   "repository": {
@@ -43,11 +44,15 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "json-loader": "^0.5.4",
+    "mkdirp": "^0.5.1",
+    "ncp": "^2.0.0",
     "webpack": "^1.12.14",
     "webpack-node-externals": "^1.0.0"
   },
   "dependencies": {
     "babel-polyfill": "^6.7.4",
+    "bluebird": "^3.3.4",
+    "del": "^2.2.0",
     "express": "^4.13.4",
     "react": "^0.14.7",
     "react-dom": "^0.14.7"
